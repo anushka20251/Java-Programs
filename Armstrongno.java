@@ -1,35 +1,59 @@
-
 import java.util.Scanner;
 
 public class Armstrongno {
-    public static void main(String[] args){
+    public static  Scanner sc=new Scanner(System.in);
+    public static void main(String[]args){
+         Scanner sc=new Scanner(System.in);
+         System.out.println("enter size");
+         int size=sc.nextInt();
+         
+
+         int[] arr=new int [size];
+           for(int i=0;i<arr.length;i++)
+           {
+             arr[i]=sc.nextInt();
+             
+           }
+
+           for(int i=0;i<arr.length;i++)
+           {
+             
+             if(isarmstrong(arr[i]))
+           {
+            System.out.print(arr[i]+" ");
+           }
+           }
+           
        
-         isarmstrong();
+   }
+    public static boolean isarmstrong(int num)
+    {
+         int sum=0;
+         
+         int number=num;
 
-}
- public static boolean  isarmstrong(){
-    Scanner sc=new Scanner(System.in);
-     System.out.println("Enter a number");
-      int number=sc.nextInt();
-     int sum=0;
-     int num=number;
-
-     while(num>0){
-     int digit=num%10;
-     
-     sum+=digit*digit*digit;
-     num=num/10;
     
- }
- if(sum==number){
-     System.out.println(number+"is armstrong");
-     return true;
- }
- else{
-      System.out.println(number+"is not  armstrong");
-      return false;
- }
-     
-     }
+         for(int i=0;i<num;i++)
+         {
+            int digit=number%10;
+            
+            sum+=digit*digit*digit;
+            number=number/10;
+          }
+          if(sum==num)
+          {
+            return true;
+          }
+          return false;
+    }
+          
+    
+         
+            
 }
+
+        
+         
+
+    
 
